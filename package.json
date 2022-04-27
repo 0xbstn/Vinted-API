@@ -1,0 +1,22 @@
+{
+  "name": "vinted-api",
+  "version": "2.8.0",
+  "description": "JavaScript library to interact with the Vinted API",
+  "main": "index.js",
+  "typings": "./index.d.ts",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "",
+  "license": "ISC",
+  "engines": {
+    "node": ">=15.0.0"
+  },
+  "dependencies": {
+    "cookie": "^0.4.1",
+    "https-proxy-agent": "^5.0.0",
+    "jest": "^27.0.6",
+    "node-fetch": "^2.6.1",
+    "user-agents": "^1.0.642"
+  }
+}
