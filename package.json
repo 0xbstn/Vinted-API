@@ -13,6 +13,7 @@
     "node": ">=15.0.0"
   },
   "dependencies": {
+    "axios": "^0.27.2",
     "cookie": "^0.4.1",
     "https-proxy-agent": "^5.0.0",
     "jest": "^27.0.6",
