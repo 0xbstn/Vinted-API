@@ -2,7 +2,7 @@ const fetch = require('node-fetch');
 const UserAgent = require('user-agents');
 const cookie = require('cookie');
 const { HttpsProxyAgent } = require('https-proxy-agent');
-
+const axios = require("axios")
 /**
  * Fetches a new public cookie from Vinted.fr
  */
