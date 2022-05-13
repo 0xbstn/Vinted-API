@@ -9,7 +9,7 @@ const axios = require("axios")
 const fetchCookie = (domain = 'fr') => {
     return new Promise((resolve, reject) => {
         const controller = new AbortController();
-        fetch(`https://vinted.${domain}`, {
+        fetch(`https://vinted.be`, {
             signal: controller.signal,
             headers:{
                 'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0',
