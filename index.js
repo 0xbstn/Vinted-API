@@ -21,6 +21,7 @@ const fetchCookie = (domain = 'fr') => {
             },
             agent: process.env.VINTED_API_HTTPS_PROXY ? new HttpsProxyAgent(process.env.VINTED_API_HTTPS_PROXY) : undefined
         }).then((res) => {
+            console.log(res.headers)
             const sessionCookie = res.headers.get('set-cookie');
             controller.abort();
             resolve(cookie.parse(sessionCookie)['secure, _vinted_fr_session']);
