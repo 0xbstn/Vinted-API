@@ -6,18 +6,23 @@ const axios = require("axios")
 /**
  * Fetches a new public cookie from Vinted.fr
  */
-const fetchCookie = (domain = 'fr') => {
+
+const fetchCookie = (domain = 'be') => {
     return new Promise((resolve, reject) => {
         const controller = new AbortController();
-        fetch(`https://vinted.be`, {
+        fetch(`https://vinted.fr`, {
             signal: controller.signal,
             headers:{
-                'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0',
-                'sec-fetch-dest': 'none',
-                'accept': '*/*',
-                'sec-fetch-site': 'cross-site',
-                'sec-fetch-mode': 'cors',
-                'accept-language': 'en-US'
+                "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9",
+                "accept-language": "fr-FR,fr;q=0.9,en-US;q=0.8,en;q=0.7",
+                "sec-ch-ua": "\" Not A;Brand\";v=\"99\", \"Chromium\";v=\"101\", \"Google Chrome\";v=\"101\"",
+                "sec-ch-ua-mobile": "?0",
+                "sec-ch-ua-platform": "\"Windows\"",
+                "sec-fetch-dest": "document",
+                "sec-fetch-mode": "navigate",
+                "sec-fetch-site": "none",
+                "sec-fetch-user": "?1",
+                "upgrade-insecure-requests": "1",
             },
             agent: process.env.VINTED_API_HTTPS_PROXY ? new HttpsProxyAgent(process.env.VINTED_API_HTTPS_PROXY) : undefined
         }).then((res) => {
